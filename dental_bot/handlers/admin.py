@@ -20,7 +20,7 @@ from states.admin_states import (
 router = Router()
 
 
-# ==================== АВТОРИЗАЦИЯ ====================
+# АВТОРИЗАЦИЯ
 
 @router.message(Command("admin"))
 async def admin_panel_cmd(message: Message, state: FSMContext):
@@ -61,7 +61,7 @@ async def show_admin_panel(message: Message):
     )
 
 
-# ==================== ГЛАВНОЕ МЕНЮ АДМИНА ====================
+# ГЛАВНОЕ МЕНЮ АДМИНА 
 
 @router.callback_query(F.data == "admin_back_main")
 async def admin_back_main(callback: CallbackQuery, state: FSMContext):
@@ -86,7 +86,7 @@ async def admin_exit(callback: CallbackQuery, state: FSMContext):
     )
 
 
-# ==================== ВРАЧИ ====================
+# ВРАЧИ
 
 @router.callback_query(F.data == "admin_doctors")
 async def admin_doctors(callback: CallbackQuery, state: FSMContext):
@@ -297,7 +297,7 @@ async def adm_edit_doctor_desc(message: Message, state: FSMContext):
     await show_admin_panel(message)
 
 
-# ==================== УСЛУГИ ====================
+# УСЛУГИ
 
 @router.callback_query(F.data == "admin_services")
 async def admin_services(callback: CallbackQuery, state: FSMContext):
@@ -561,7 +561,7 @@ async def adm_edit_srv_price(message: Message, state: FSMContext):
     await show_admin_panel(message)
 
 
-# ==================== ВРЕМЕННЫЕ СЛОТЫ ====================
+# ВРЕМЕННЫЕ СЛОТЫ
 
 @router.callback_query(F.data == "admin_slots")
 async def admin_slots(callback: CallbackQuery, state: FSMContext):
@@ -841,7 +841,7 @@ async def adm_appointment_detail(callback: CallbackQuery):
     )
 
 
-# ==================== АДМИНИСТРАТОРЫ ====================
+# АДМИНИСТРАТОРЫ
 
 @router.callback_query(F.data == "admin_admins")
 async def admin_admins(callback: CallbackQuery, state: FSMContext):
