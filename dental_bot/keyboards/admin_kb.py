@@ -14,7 +14,7 @@ def admin_main_kb() -> InlineKeyboardMarkup:
     return builder.as_markup()
 
 
-# ===== DOCTORS =====
+# DOCTORS
 
 def admin_doctors_kb(doctors: list) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
@@ -50,7 +50,7 @@ def confirm_delete_kb(entity: str, entity_id: int) -> InlineKeyboardMarkup:
     return builder.as_markup()
 
 
-# ===== SERVICES =====
+# SERVICES 
 
 def admin_services_kb(services: list) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
@@ -118,7 +118,7 @@ def admin_slot_detail_kb(slot_id: int, is_available: bool) -> InlineKeyboardMark
     return builder.as_markup()
 
 
-# ===== APPOINTMENTS =====
+# APPOINTMENTS
 
 def admin_appointments_kb(appointments: list) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
@@ -148,7 +148,7 @@ def admin_appointment_detail_kb(apt_id: int, status: str) -> InlineKeyboardMarku
     return builder.as_markup()
 
 
-# ===== ADMINS =====
+# ADMINS
 
 def admin_admins_kb(admins: list, current_user_id: int) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
