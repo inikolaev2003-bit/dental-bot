@@ -75,7 +75,7 @@ async def init_db():
         await db.commit()
 
 
-# ==================== ADMINS ====================
+# ADMINS 
 
 async def is_admin(user_id: int) -> bool:
     async with aiosqlite.connect(DB_PATH) as db:
@@ -108,7 +108,7 @@ async def remove_admin(user_id: int):
         await db.commit()
 
 
-# ==================== DOCTORS ====================
+# DOCTORS 
 
 async def add_doctor(name: str, specialization: str, description: str = ""):
     async with aiosqlite.connect(DB_PATH) as db:
@@ -162,7 +162,7 @@ async def delete_doctor(doctor_id: int):
         await db.commit()
 
 
-# ==================== SERVICES ====================
+# SERVICES
 
 async def add_service(name: str, description: str, duration: int, price: float):
     async with aiosqlite.connect(DB_PATH) as db:
@@ -216,7 +216,7 @@ async def delete_service(service_id: int):
         await db.commit()
 
 
-# ==================== TIME SLOTS ====================
+# TIME SLOTS
 
 async def add_time_slot(doctor_id: int, slot_date: str, slot_time: str):
     async with aiosqlite.connect(DB_PATH) as db:
@@ -282,7 +282,7 @@ async def book_slot(slot_id: int):
         await db.commit()
 
 
-# ==================== APPOINTMENTS ====================
+# APPOINTMENTS
 
 async def create_appointment(
     user_id: int, username: str, full_name: str, phone: str,
