@@ -13,7 +13,7 @@ from states.client_states import AppointmentStates
 router = Router()
 
 
-# ==================== СТАРТ ====================
+# СТАРТ
 
 @router.message(CommandStart())
 async def cmd_start(message: Message, state: FSMContext):
@@ -62,7 +62,7 @@ async def contacts(message: Message):
     )
 
 
-# ==================== ЗАПИСЬ НА ПРИЁМ ====================
+# ЗАПИСЬ НА ПРИЁМ
 
 @router.message(F.text == "📅 Записаться на приём")
 async def start_appointment(message: Message, state: FSMContext):
@@ -263,7 +263,7 @@ async def confirm_appointment(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer("Главное меню:", reply_markup=main_menu_kb())
 
 
-# ==================== МОИ ЗАПИСИ ====================
+# МОИ ЗАПИСИ
 
 @router.message(F.text == "📋 Мои записи")
 async def my_appointments(message: Message, state: FSMContext):
