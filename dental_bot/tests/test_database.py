@@ -11,7 +11,7 @@ async def setup_db(initialized_db):
     pass
 
 
-# ==================== ТЕСТЫ ИНИЦИАЛИЗАЦИИ ====================
+# ТЕСТЫ ИНИЦИАЛИЗАЦИИ
 
 class TestDatabaseInit:
 
@@ -39,7 +39,7 @@ class TestDatabaseInit:
         assert count >= 5
 
 
-# ==================== ТЕСТЫ АДМИНИСТРАТОРОВ ====================
+# ТЕСТЫ АДМИНИСТРАТОРОВ
 
 class TestAdminOperations:
 
@@ -88,7 +88,7 @@ class TestAdminOperations:
         assert await database.is_admin(333) is True
 
 
-# ==================== ТЕСТЫ ВРАЧЕЙ ====================
+# ТЕСТЫ ВРАЧЕЙ
 
 class TestDoctorOperations:
 
@@ -179,7 +179,7 @@ class TestDoctorOperations:
         await database.delete_doctor(99999)  # Не должно упасть
 
 
-# ==================== ТЕСТЫ УСЛУГ ====================
+# ТЕСТЫ УСЛУГ
 
 class TestServiceOperations:
 
@@ -259,7 +259,7 @@ class TestServiceOperations:
         assert float(service[4]) == 1500.50
 
 
-# ==================== ТЕСТЫ ВРЕМЕННЫХ СЛОТОВ ====================
+# ТЕСТЫ ВРЕМЕННЫХ СЛОТОВ
 
 class TestTimeSlotOperations:
 
@@ -340,7 +340,7 @@ class TestTimeSlotOperations:
         assert slot1 != slot2
 
 
-# ==================== ТЕСТЫ ЗАПИСЕЙ ====================
+# ТЕСТЫ ЗАПИСЕЙ
 
 class TestAppointmentOperations:
 
