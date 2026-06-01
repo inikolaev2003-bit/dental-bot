@@ -15,7 +15,7 @@ from aiogram.types import (
 TEST_DB_PATH = ":memory:"
 
 
-# ==================== ФИКСТУРЫ БД ====================
+# ФИКСТУРЫ БД 
 
 @pytest.fixture
 async def db_connection():
@@ -35,7 +35,7 @@ async def initialized_db(tmp_path, monkeypatch):
     yield str(db_file)
 
 
-# ==================== ФИКСТУРЫ ПОЛЬЗОВАТЕЛЕЙ ====================
+# ФИКСТУРЫ ПОЛЬЗОВАТЕЛЕЙ 
 
 @pytest.fixture
 def make_user():
@@ -68,7 +68,7 @@ def admin_user(make_user):
     return make_user(user_id=999999999, username="admin_user")
 
 
-# ==================== ФИКСТУРЫ СООБЩЕНИЙ ====================
+# ФИКСТУРЫ СООБЩЕНИЙ
 
 @pytest.fixture
 def make_chat():
@@ -126,7 +126,7 @@ def make_callback(make_user, make_message, make_chat):
     return _make
 
 
-# ==================== ФИКСТУРЫ FSM ====================
+# ФИКСТУРЫ FSM
 
 @pytest.fixture
 def make_state():
@@ -142,7 +142,7 @@ def make_state():
     return _make
 
 
-# ==================== ФИКСТУРЫ БОТА ====================
+# ФИКСТУРЫ БОТА
 
 @pytest.fixture
 def bot():
@@ -154,7 +154,7 @@ def bot():
     return mock_bot
 
 
-# ==================== ТЕСТОВЫЕ ДАННЫЕ ====================
+# ТЕСТОВЫЕ ДАННЫЕ
 
 @pytest.fixture
 def sample_doctor():
